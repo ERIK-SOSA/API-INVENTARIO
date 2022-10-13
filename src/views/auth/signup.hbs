@@ -4,18 +4,24 @@
       <form class="card card-body bg-dark text-white p-5" action="/signup" method="POST">
         <h3 class="text-center fw-bold mb-4">Registese</h3>
 
-        <label for="fullname">Escriba su nombre completo:</label>
-        <input type="type" name="fullname" placeholder="" class="form-control mb-3" autofocus />
+        <label for="nombre_completo">Escriba su nombre completo:</label>
+        <input type="type" name="nombre_completo" placeholder="" class="form-control mb-3" autofocus />
 
-        <label for="username">Escriba su correo electrónico:</label>
-        <input type="email" name="email" placeholder="" class="form-control mb-3" />
+        <label for="correo_electronico">Escriba su correo electrónico:</label>
+        <input type="email" name="correo_electronico" placeholder="" class="form-control mb-3" />
 
-        <label for="password">Escriba su contraseña:</label>
-        <input type="password" name="password1" placeholder="" class="form-control mb-3" />
+        <label for="contraseña">Escriba su contraseña:</label>
+        <input type="password" name="contraseña1" placeholder="" class="form-control mb-3" />
 
         {{!-- Confirm your password --}}
-        <label for="password">Confirmar la contraseña:</label>
-        <input type="password" name="password2" placeholder="" class="form-control mb-3" />
+        <label for="contraseña">Confirmar la contraseña:</label>
+        <input type="password" name="contraseña2" placeholder="" class="form-control mb-3" />
+
+        <label for="date">Fecha de nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" placeholder="" class="form-control mb-3" />
+
+        <label for="identificacion">Identificación:</label>
+        <input type="type" name="identificacion" placeholder="" class="form-control mb-3" />
 
         <button class="btn btn-success btn-block">
           Registrarse
@@ -29,3 +35,4 @@
     </p> --}}
   </div>
 </div>
+

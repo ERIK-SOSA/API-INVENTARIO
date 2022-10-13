@@ -7,22 +7,27 @@ export const renderSignUp = (req, res) => {
 };
 
 export const signUp = async (req, res, next) => {
-  const { fullname, email, password1, password2 } = req.body;
+  const { nombre_completo, correo_electronico, contraseña1, contraseña2, fecha_nacimiento, identificacion } = req.body;
 
-  if (password1 !== password2) {
-    req.flash("message", "Passwords do not match");
+  console.log(req.body)
+  console.log(req.query)
+
+  if (contraseña1 !== contraseña2) {
+    req.flash("message", "Contraseña no coincide");
     return res.redirect("/signup");
   }
 
   const newUser = {
-    fullname,
-    email,
+    nombre_completo,
+    correo_electronico,
+    fecha_nacimiento,
+    identificacion
   };
 
-  newUser.password = await encryptPassword(password1);
+  newUser.contraseña = await encryptPassword(contraseña1);
 
   // Saving in the Database
-  const [result] = await pool.query("INSERT INTO users SET ? ", newUser);
+  const [result] = await pool.query("INSERT INTO usuarios SET ? ", newUser);
   newUser.id = result.insertId;
 
   req.login(newUser, (err) => {

@@ -1,0 +1,7 @@
+DATABASE_HOST = "localhost"
+DATABASE_USER = "admin"
+DATABASE_PASSWORD = "Sosita.96"
+DATABASE_NAME = "linksdb"
+
+PORT = 3000
+
